@@ -70,3 +70,40 @@ Content-Type: application/json
 {
   "id": 999
 }
+
+
+### Транзакции
+
+### Получить все транзакции
+GET {{FinancialTracker_HostAddress}}/api/transactions
+Accept: application/json
+
+### Создать новую транзакцию
+POST {{FinancialTracker_HostAddress}}/api/transactions
+Content-Type: application/json
+
+{
+  "description": "Покупка продуктов",
+  "amount": 2500.50,
+  "categoryId": 1
+}
+
+### Получить транзакцию по ID
+GET {{FinancialTracker_HostAddress}}/api/transactions/1
+Accept: application/json
+
+### Обновить транзакцию
+PUT {{FinancialTracker_HostAddress}}/api/transactions
+Content-Type: application/json
+
+{
+  "id": 1,
+  "description": "Покупка в супермаркете",
+  "amount": 3000.00,
+  "date": "2024-01-15T10:30:00Z",
+  "categoryId": 1
+}
+
+### Удалить транзакцию
+DELETE {{FinancialTracker_HostAddress}}/api/transactions/1
+Accept: application/json
