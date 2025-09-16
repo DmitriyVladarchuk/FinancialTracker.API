@@ -8,14 +8,13 @@
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.9"/>
+        <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.1" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.1" />
+        <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.1" />
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Data\Entities\" />
-      <Folder Include="Data\Repositories\" />
-      <Folder Include="DTOs\" />
-      <Folder Include="Interfaces\" />
-      <Folder Include="Services\" />
+      <Folder Include="Data\Migrations\" />
     </ItemGroup>
 
 </Project>

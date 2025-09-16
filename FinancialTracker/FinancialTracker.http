@@ -1,6 +1,102 @@
 @FinancialTracker_HostAddress = http://localhost:5031
 
-GET {{FinancialTracker_HostAddress}}/weatherforecast/
+### Получить все категории
+GET {{FinancialTracker_HostAddress}}/api/categories
 Accept: application/json
 
-###
+### Создать новую категорию
+POST {{FinancialTracker_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "name": "Продукты"
+}
+
+### Создать категорию с дублирующим именем
+POST {{FinancialTracker_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "name": "Продукты"
+}
+
+### Получить категорию по ID
+GET {{FinancialTracker_HostAddress}}/api/categories/1
+Accept: application/json
+
+### Получить несуществующую категорию
+GET {{FinancialTracker_HostAddress}}/api/categories/999
+Accept: application/json
+
+### Обновить категорию
+PUT {{FinancialTracker_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Супермаркет"
+}
+
+### Обновить категорию с дублирующим именем
+PUT {{FinancialTracker_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "Супермаркет"
+}
+
+### Обновить несуществующую категорию
+PUT {{FinancialTracker_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "id": 999,
+  "name": "Несуществующая"
+}
+
+### Удалить категорию
+DELETE {{FinancialTracker_HostAddress}}/api/categories/5
+Content-Type: application/json
+
+
+### Удалить несуществующую категорию
+DELETE {{FinancialTracker_HostAddress}}/api/categories/999
+Content-Type: application/json
+
+
+### Транзакции
+
+### Получить все транзакции
+GET {{FinancialTracker_HostAddress}}/api/transactions
+Accept: application/json
+
+### Создать новую транзакцию
+POST {{FinancialTracker_HostAddress}}/api/transactions
+Content-Type: application/json
+
+{
+  "description": "Покупка продуктов",
+  "amount": 2500.50,
+  "categoryId": 1
+}
+
+### Получить транзакцию по ID
+GET {{FinancialTracker_HostAddress}}/api/transactions/1
+Accept: application/json
+
+### Обновить транзакцию
+PUT {{FinancialTracker_HostAddress}}/api/transactions
+Content-Type: application/json
+
+{
+  "id": 1,
+  "description": "Покупка в супермаркете",
+  "amount": 3000.00,
+  "date": "2025-09-16T10:30:00Z",
+  "categoryId": 1
+}
+
+### Удалить транзакцию
+DELETE {{FinancialTracker_HostAddress}}/api/transactions/1
+Accept: application/json
