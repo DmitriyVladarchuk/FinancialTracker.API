@@ -52,9 +52,9 @@ public class CategoryService(ICategoryRepository categoryRepository) : ICategory
         return MapToResponseDto(updatedCategory);
     }
 
-    public async Task<CategoryResponseDto?> DeleteAsync(CategoryDeleteDto deleteDto)
+    public async Task<CategoryResponseDto?> DeleteAsync(int id)
     {
-        var existingCategory = await categoryRepository.GetByIdAsync(deleteDto.Id);
+        var existingCategory = await categoryRepository.GetByIdAsync(id);
         if (existingCategory == null)
             return null;
 

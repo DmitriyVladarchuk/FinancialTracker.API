@@ -89,21 +89,20 @@ public class CategoriesController(
         }
     }
 
-    [HttpDelete]
-    public async Task<ActionResult<CategoryResponseDto>> Delete(CategoryDeleteDto deleteDto)
+    [HttpDelete("{id:int}")]
+    public async Task<ActionResult<CategoryResponseDto>> Delete(int id)
     {
         try
         {
-            var category = await categoryService.DeleteAsync(deleteDto);
+            var category = await categoryService.DeleteAsync(id);
             if (category != null) return Ok(category);
-            
-            logger.LogWarning("Категория не найдена для удаления: {Id}", deleteDto.Id);
-            return NotFound(new { message = $"Категория с ID {deleteDto.Id} не найдена" });
-
+        
+            logger.LogWarning("Категория не найдена для удаления: {Id}", id);
+            return NotFound(new { message = $"Категория с ID {id} не найдена" });
         }
         catch (Exception ex)
         {
-            logger.LogError(ex, "Ошибка при удалении категории: {Id}", deleteDto.Id);
+            logger.LogError(ex, "Ошибка при удалении категории: {Id}", id);
             return StatusCode(500, new { message = "Внутренняя ошибка сервера при удалении категории" });
         }
     }

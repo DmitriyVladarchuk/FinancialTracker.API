@@ -9,5 +9,5 @@ public interface ICategoriesController
     Task<ActionResult<List<CategoryResponseDto>>> GetAll();
     Task<ActionResult<CategoryResponseDto>> GetById(int id);
     Task<ActionResult<CategoryResponseDto>> Update(CategoryUpdateDto updateDto);
-    Task<ActionResult<CategoryResponseDto>> Delete(CategoryDeleteDto deleteDto);
+    Task<ActionResult<CategoryResponseDto>> Delete(int id);
 }
