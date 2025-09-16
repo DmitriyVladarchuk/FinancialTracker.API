@@ -22,6 +22,9 @@ public class CategoryConfiguration : IEntityTypeConfiguration<Category>
     public void Configure(EntityTypeBuilder<Category> builder)
     {
         builder.HasKey(e => e.Id);
+        
+        builder.HasIndex(e => e.Name)
+            .IsUnique();
 
         builder.HasMany(e => e.Transactions)
             .WithOne(e => e.Category)

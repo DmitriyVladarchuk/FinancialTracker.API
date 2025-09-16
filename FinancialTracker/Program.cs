@@ -1,9 +1,14 @@
 using FinancialTracker.Data;
+using FinancialTracker.Data.Repositories;
+using FinancialTracker.Interfaces;
+using FinancialTracker.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<ICategoryService, CategoryService>();
 
 builder.Services.AddDbContext<FinancialDbContext>(options => 
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));

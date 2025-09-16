@@ -1,6 +1,72 @@
 @FinancialTracker_HostAddress = http://localhost:5031
 
-GET {{FinancialTracker_HostAddress}}/weatherforecast/
+### Получить все категории
+GET {{FinancialTracker_HostAddress}}/api/categories
 Accept: application/json
 
-###
+### Создать новую категорию
+POST {{FinancialTracker_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "name": "Продукты"
+}
+
+### Создать категорию с дублирующим именем
+POST {{FinancialTracker_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "name": "Продукты"
+}
+
+### Получить категорию по ID
+GET {{FinancialTracker_HostAddress}}/api/categories/1
+Accept: application/json
+
+### Получить несуществующую категорию
+GET {{FinancialTracker_HostAddress}}/api/categories/999
+Accept: application/json
+
+### Обновить категорию
+PUT {{FinancialTracker_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Супермаркет"
+}
+
+### Обновить категорию с дублирующим именем
+PUT {{FinancialTracker_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "id": 3,
+  "name": "Супермаркет"
+}
+
+### Обновить несуществующую категорию
+PUT {{FinancialTracker_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "id": 999,
+  "name": "Несуществующая"
+}
+
+### Удалить категорию
+DELETE {{FinancialTracker_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "id": 5
+}
+
+### Удалить несуществующую категорию
+DELETE {{FinancialTracker_HostAddress}}/api/categories
+Content-Type: application/json
+
+{
+  "id": 999
+}

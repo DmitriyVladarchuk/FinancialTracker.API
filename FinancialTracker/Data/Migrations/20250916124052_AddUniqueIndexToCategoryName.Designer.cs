@@ -3,6 +3,7 @@ using System;
 using FinancialTracker.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace FinancialTracker.Data.Migrations
 {
     [DbContext(typeof(FinancialDbContext))]
-    partial class FinancialDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250916124052_AddUniqueIndexToCategoryName")]
+    partial class AddUniqueIndexToCategoryName
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
