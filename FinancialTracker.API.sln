@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker", "FinancialTracker\FinancialTracker.csproj", "{BBECDC23-AC86-4437-8F43-FB9221F4724F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinancialTracker.Tests", "FinancialTracker.Tests\FinancialTracker.Tests.csproj", "{129BAEA0-4BA6-468A-B0F1-ED748AE9D316}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{BBECDC23-AC86-4437-8F43-FB9221F4724F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBECDC23-AC86-4437-8F43-FB9221F4724F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBECDC23-AC86-4437-8F43-FB9221F4724F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{129BAEA0-4BA6-468A-B0F1-ED748AE9D316}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{129BAEA0-4BA6-468A-B0F1-ED748AE9D316}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{129BAEA0-4BA6-468A-B0F1-ED748AE9D316}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{129BAEA0-4BA6-468A-B0F1-ED748AE9D316}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
