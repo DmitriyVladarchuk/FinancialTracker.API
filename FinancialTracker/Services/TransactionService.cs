@@ -22,6 +22,11 @@ public class TransactionService(
 
     public async Task<TransactionResponseDto> AddAsync(TransactionCreateDto createDto)
     {
+        if (createDto.Amount <= 0)
+        {
+            throw new InvalidOperationException("Сумма транзакции должна быть положительной");
+        }
+        
         var category = await categoryRepository.GetByIdAsync(createDto.CategoryId);
         if (category == null)
         {
@@ -42,6 +47,11 @@ public class TransactionService(
 
     public async Task<TransactionResponseDto?> UpdateAsync(TransactionUpdateDto updateDto)
     {
+        if (updateDto.Amount <= 0)
+        {
+            throw new InvalidOperationException("Сумма транзакции должна быть положительной");
+        }
+        
         var existingTransaction = await transactionRepository.GetByIdAsync(updateDto.Id);
         if (existingTransaction == null)
             return null;
