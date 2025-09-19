@@ -8,9 +8,9 @@ public class Transaction
     public required string Description { get; set; }
     
     [Column(TypeName = "decimal(18,2)")]
-    public decimal Amount { get; set; }
+    public required decimal Amount { get; set; }
     public DateTime Date { get; set; } = DateTime.UtcNow;
     
-    public int CategoryId { get; set; }
+    public required int CategoryId { get; set; }
     public Category Category { get; set; } = null!;
 }
