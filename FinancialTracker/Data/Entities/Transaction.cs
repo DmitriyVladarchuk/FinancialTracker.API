@@ -13,4 +13,7 @@ public class Transaction
     
     public required int CategoryId { get; set; }
     public Category Category { get; set; } = null!;
+    
+    public Guid UserId { get; set; }
+    public User User { get; set; } = null!;
 }
