@@ -21,7 +21,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\FinancialTracker\FinancialTracker.csproj" />
+      <ProjectReference Include="..\FinancialTracker.API\FinancialTracker.csproj" />
     </ItemGroup>
 
 </Project>
